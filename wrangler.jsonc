@@ -1,8 +1,24 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "hono-quiz-app",
-  "main": "src/index.ts",
-  "compatibility_date": "2025-03-26"
+  "main": "src/index.tsx",
+  "compatibility_date": "2025-03-26",
+  // Durable Objects のバインド
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "ROOM",         // c.env.ROOM で参照できる
+        "class_name": "Room"    // クラス名（src/room.tsなどで export class Room）
+      }
+    ]
+  },
+  // DOのマイグレーション管理（初期化時必須）
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["Room"]
+    }
+  ]
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
