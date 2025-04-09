@@ -3,6 +3,9 @@
   "name": "hono-quiz-app",
   "main": "src/index.tsx",
   "compatibility_date": "2025-03-26",
+  "build": {
+    "command": "pnpm build",
+  },
   // Durable Objects のバインド
   "durable_objects": {
     "bindings": [
@@ -16,7 +19,7 @@
   "migrations": [
     {
       "tag": "v1",
-      "new_classes": ["Room"]
+      "new_sqlite_classes": ["Room"]
     }
   ]
   // "compatibility_flags": [

@@ -1,4 +1,4 @@
-// src/components/Layout.tsx
+// components/Layout.tsx
 import { FC } from "hono/jsx";
 
 export const Layout: FC = (props) => (
@@ -7,22 +7,10 @@ export const Layout: FC = (props) => (
       <meta charSet="UTF-8" />
       <title>リアルタイムクイズ</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <style>{`
-        body {
-          font-family: sans-serif;
-          padding: 1rem;
-          background: #f9f9f9;
-        }
-        h1 {
-          font-size: 1.5rem;
-          margin-bottom: 1rem;
-        }
-        ul {
-          padding-left: 1rem;
-        }
-      `}</style>
+      <script src="https://cdn.tailwindcss.com"></script>{" "}
+      {/* 👈 これを追加！ */}
     </head>
-    <body>
+    <body class="bg-gray-100 min-h-screen p-6">
       <main>{props.children}</main>
     </body>
   </html>
